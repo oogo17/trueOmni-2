@@ -1,4 +1,8 @@
+<div class="container">
+    <div class="box" *ngFor="let organization of organizations">
 
-<ul>
-    <li *ngFor="let organization of organizations"> {{organization.listingId}}{{organization.company}}</li>
-</ul>
+        <!-- <app-company-detail [organization]></app-company-detail> -->
+        <img src={{organization.image_List}} alt="" srcset="">
+        <span class="box-text">Title</span>
+    </div>
+</div>

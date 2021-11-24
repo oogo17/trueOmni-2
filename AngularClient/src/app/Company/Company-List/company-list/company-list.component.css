@@ -1,0 +1,23 @@
+.container {
+    width: 700px;
+    height: 1000px;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    display: inline-flex;
+    overflow: hidden;
+    padding: 1%;
+    align-items: center;
+}
+.box-text {
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 24px;
+}
+.box img {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px
+}

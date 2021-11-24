@@ -7,7 +7,7 @@ import { TrueOmniClientService } from 'src/app/Services/true-omni-client.service
   styleUrls: ['./company-list.component.css']
 })
 export class CompanyListComponent implements OnInit {
-  organizations: any ={};
+  organizations: any =[];
 
   constructor(private trueOmniService: TrueOmniClientService) { }
 
@@ -15,8 +15,17 @@ export class CompanyListComponent implements OnInit {
   ngOnInit(): void {
      this.organizations = this.trueOmniService.getCompanies().subscribe(response => {
       this.organizations = response;
+      this.getFirstImage();
+      
     }, error => {
       console.log(console.error);
+    });
+  }
+
+  getFirstImage(): void {
+  
+    this.organizations.forEach((element: { image_List: any; }) => {
+      element.image_List = element.image_List.split("|", 1);
     });
   }
 
